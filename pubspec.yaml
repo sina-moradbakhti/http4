@@ -2,7 +2,7 @@ name: http4
 description: "Best alternative to http package, with interceptors"
 version: 0.0.1
 homepage: https://github.com/sina-moradbakhti/http4
-repository: https://github.com/sina-moradbakhti/lazylist
+repository: https://github.com/sina-moradbakhti/http4
 license: MIT
 
 environment:
