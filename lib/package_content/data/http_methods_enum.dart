@@ -1,0 +1,1 @@
+enum Http4Method { get, post, delete, patch, put }

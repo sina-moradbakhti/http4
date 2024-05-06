@@ -1,0 +1,23 @@
+name: http4
+description: "Best alternative to http package, with interceptors"
+version: 0.0.1
+homepage: https://github.com/sina-moradbakhti/http4
+repository: https://github.com/sina-moradbakhti/lazylist
+license: MIT
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
+  http_interceptor: ^2.0.0-beta.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
