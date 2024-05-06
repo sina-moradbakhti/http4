@@ -61,6 +61,53 @@ class ExampleService extends http4.Http4 {
   }
 }
 ```
+
+### How to use interceptor
+```dart
+import 'package:http4/http4.dart' as http4;
+
+class ExampleService extends http4.Http4 {
+  Future<List<Map<String,dynamic>>> fetchData() async {
+    final response = await get(
+      '/posts?_page=1&_per_page=10',
+      interceptors: [
+        AuthInterceptor(token: 'Your-Token-Here'),
+      ],
+    );
+
+    return response.decodedBody;
+  }
+}
+
+class AuthInterceptor extends http4.InterceptorContract {
+  late String token;
+
+  AuthInterceptor({
+    required this.token,
+  });
+
+  @override
+  Future<http4.BaseRequest> interceptRequest(
+      {required http4.BaseRequest request}) {
+    request.headers.addAll({'Authorization': 'Bearer $token'});
+
+    // Before sending the request, Authorization will add to the headers
+    return Future.value(request);
+  }
+
+  @override
+  Future<http4.BaseResponse> interceptResponse(
+      {required http4.BaseResponse response}) {
+    if (response.statusCode == 401) {
+      print('Unauthorized request');
+      // After calling the request, it will be redirected to the login page
+    }
+
+    return Future.value(response);
+  }
+}
+```
+
 ## Configuration
 To configure the base URL and debug mode, use `Http4Config`:
 
