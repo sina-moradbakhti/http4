@@ -12,10 +12,10 @@ The **`http4`** package provides enhanced HTTP request functionality in Flutter 
 
 
 ## Installation
-Add `lazylist` to your `pubspec.yaml` file:
+Add `http4` to your `pubspec.yaml` file:
 ```yaml
 dependencies:
-    http4: ^1.0.0
+    http4: ^0.0.4
 ```
 
 
